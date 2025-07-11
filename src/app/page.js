@@ -1,9 +1,11 @@
 import Image from "next/image";
 function Chevrons() {
-  return <div className="flex">
-    <div className="w-3 h-3 border border-r-2 border-b-2 border-r-primary border-b-primary border-l-0 border-t-0 -rotate-45"></div>
-    <div className="w-3 h-3 border border-r-2 border-b-2 border-r-primary border-b-primary border-l-0 border-t-0 -rotate-45 relative -left-1"></div>
-  </div>
+  return (
+    <div className="flex">
+      <div className="w-3 h-3 border border-r-2 border-b-2 border-r-primary border-b-primary border-l-0 border-t-0 -rotate-45"></div>
+      <div className="w-3 h-3 border border-r-2 border-b-2 border-r-primary border-b-primary border-l-0 border-t-0 -rotate-45 relative -left-1"></div>
+    </div>
+  );
 }
 export default function Home() {
   return (
@@ -112,41 +114,69 @@ export default function Home() {
       {/* About */}
       <section className="flex flex-col lg:flex-row py-8 sm:pt-16 px-6">
         <div className="mb-6 lg:flex-2/3 lg: pr-12 self-center lg:mb-0">
-           <h4 className="text-white flex items-center gap-2">
-          <div className="h-1 w-5 bg-primary rounded my-3"></div>ABOUT ME
-        </h4>
-        <h1 className="text-white text-4xl font-bold my-3">
-          Professional Photographer
-        </h1>
-        <p className="text-white mb-4 mt-8">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text,
-        </p>
+          <h4 className="text-white flex items-center gap-2">
+            <div className="h-1 w-5 bg-primary rounded my-3"></div>ABOUT ME
+          </h4>
+          <h1 className="text-white text-4xl font-bold my-3">
+            Professional Photographer
+          </h1>
+          <p className="text-white mb-4 mt-8">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text,
+          </p>
 
-        <p className="text-white mb-6">
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College in Virginia, looked up one of the more obscure
-          Latin words, consectetur, from a Lorem Ipsum passage, and going
-          through the cites of the word in classical literature, discovered the
-          undoubtable source.
-        </p>
-        <div className="hidden lg:block h-4 w-[80%] rounded-2xl bg-primary mb-6"></div>
-        <h4 className="text-primary text-xl font-bold">My Awards</h4>
-        <ul className="*:flex *:items-center *:my-2">
-          <li><Chevrons /> <span className="ml-2 text-white">Award 1</span></li>
-           <li><Chevrons /> <span className="ml-2 text-white">Award 2</span></li>
-            <li><Chevrons /> <span className="ml-2 text-white">Award 3</span></li>
-        </ul>
+          <p className="text-white mb-6">
+            Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC,
+            making it over 2000 years old. Richard McClintock, a Latin professor
+            at Hampden-Sydney College in Virginia, looked up one of the more
+            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+            going through the cites of the word in classical literature,
+            discovered the undoubtable source.
+          </p>
+          <div className="hidden lg:block h-4 w-[80%] rounded-2xl bg-primary mb-6"></div>
+          <h4 className="text-primary text-xl font-bold">My Awards</h4>
+          <ul className="*:flex *:items-center *:my-2">
+            <li>
+              <Chevrons /> <span className="ml-2 text-white">Award 1</span>
+            </li>
+            <li>
+              <Chevrons /> <span className="ml-2 text-white">Award 2</span>
+            </li>
+            <li>
+              <Chevrons /> <span className="ml-2 text-white">Award 3</span>
+            </li>
+          </ul>
         </div>
         <figure className="lg:flex-1/3">
           <img src="/about.jpg" className="rounded" />
         </figure>
+      </section>
+
+      {/* collage */}
+      <section className="bg-[#323232] p-6 py-8 lg:p-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <figure className="sm:col-span-2 lg:row-span-2">
+            <img src="/gallery-1.jpg" className="object-cover h-full w-full" />
+          </figure>
+          <figure className="sm:aspect-[1/1.4]">
+            <img src="/gallery-2.jpg" className="object-cover h-full w-full" />
+          </figure>
+          <figure className="sm:aspect-[1/1.4]">
+            <img src="/gallery-3.jpg" className="object-cover h-full w-full" />
+          </figure>
+          <figure className="sm:aspect-[1/1.4]">
+            <img src="/gallery-4.jpg" className="object-cover h-full w-full" />
+          </figure>
+          <figure className="sm:aspect-[1/1.4]">
+            <img src="/gallery-5.jpg" className="object-cover h-full w-full" />
+          </figure>
+        </div>
       </section>
     </main>
   );
