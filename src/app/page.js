@@ -7,6 +7,14 @@ function Chevrons() {
     </div>
   );
 }
+
+function ProgressBar({ percent }) {
+  return (
+    <div className="bg-[#323232] h-7 w-full rounded-2xl mt-2 mb-8 lg:mb-12">
+      <div style={{width: `${percent}%`}} className={`bg-primary h-full rounded-2xl text-white pl-4 flex items-center`}>{percent}%</div>
+    </div>
+  );
+}
 export default function Home() {
   return (
     <main className="flex flex-col max-w-screen-2xl m-auto">
@@ -175,6 +183,41 @@ export default function Home() {
           </figure>
           <figure className="sm:aspect-[1/1.4]">
             <img src="/gallery-5.jpg" className="object-cover h-full w-full" />
+          </figure>
+        </div>
+      </section>
+
+      {/* skills */}
+      <section className=" p-6 py-8 lg:p-12">
+        <div className="flex flex-col lg:flex-row-reverse">
+          <div className="flex-3/5 lg:ml-12">
+            <h4 className="text-white flex items-center gap-2">
+              <div className="h-1 w-5 bg-primary rounded my-3"></div>ABOUT ME
+            </h4>
+            <h1 className="text-white text-4xl font-bold my-3">
+              I Am Experienced In The Following Fields
+            </h1>
+
+            <p className="text-white my-2 mt-4">
+              Spring comes, the grass grows by itself.
+            </p>
+            <p className="text-white my-2 mb-6 lg:mb-8">
+              Form is emptiness, emptiness is form.
+            </p>
+
+            <h5 className="text-primary font-bold text-xl">Photography</h5>
+            <ProgressBar percent={95} />
+                 <h5 className="text-primary font-bold text-xl">Design Thinking</h5>
+            <ProgressBar percent={90} />
+                          <h5 className="text-primary font-bold text-xl">Videography</h5>
+            <ProgressBar percent={80} />
+                 <h5 className="text-primary font-bold text-xl">Social Innovation</h5>
+            <ProgressBar percent={85} />
+          </div>
+ 
+          <figure className="flex flex-2/5">
+            <div className="hidden shrink-0 lg:block w-4 h-full bg-primary rounded-2xl"></div>
+            <img className="shrink object-cover lg:pl-8" src="/skills.jpg"></img>
           </figure>
         </div>
       </section>
