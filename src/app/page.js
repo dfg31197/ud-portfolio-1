@@ -31,6 +31,42 @@ function ServiceBlock({ imgSrc, title }) {
     </div>
   );
 }
+
+function NewsCard({ imgSrc, title, date }) {
+  return (
+    <div className="p-6 bg-bglight border-t-4 border-primary rounded flex flex-col gap-3 max-w-100">
+      <img
+        className="w-[100%] aspect-[1/1.4] object-cover rounded"
+        src={imgSrc}
+      />
+
+      <h1 className="text-xl font-bold text-white">{title}</h1>
+      <h5 className="text-primary">{date}</h5>
+
+      <p className="text-white">
+        Buddhists analyze the self into five aggregates: form (body), feeling,
+        perception, mental formations, and consciousness. These are seen as
+        constantly changing and interconnected, rather than a unified, permanent
+        self.
+      </p>
+      <button className="text-white border border-primary w-fit rounded p-2 px-4 flex gap-2 items-center">
+        <span className="relative top-0.5"> READ MORE</span> <Chevrons />
+      </button>
+    </div>
+  );
+}
+
+function KITCard({ label, text, imgSrc }) {
+  return (
+    <div className="flex gap-6">
+      <img  className="w-30" src={imgSrc}></img>
+      <div className="flex flex-col self-center">
+        <h1 className="text-primary mb-3">{label}</h1>
+        <p className="text-white">{text}</p>
+      </div>
+    </div>
+  );
+}
 export default function Home() {
   return (
     <main className="flex flex-col max-w-screen-2xl m-auto">
@@ -95,16 +131,12 @@ export default function Home() {
               </ul>
 
               <p className="mb-6 text-white lg:pr-4">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+                All that we are is the result of what we have thought: it is
+                founded on our thoughts and made up of our thoughts. If a man
+                speak or act with an evil thought, suffering follows him as the
+                wheel follows the hoof of the beast that draws the wagon.... If
+                a man speak or act with a good thought, happiness follows him
+                like a shadow that never leaves him.
               </p>
               <a
                 href="#"
@@ -379,23 +411,135 @@ export default function Home() {
 
       {/* news */}
       <section className="p-6 py-8 lg:p-12">
-        <h4 className="text-white flex items-center gap-2">
-          <div className="h-1 w-5 bg-primary rounded my-3"></div>
-          NEWS
-        </h4>
-        <h1 className="text-white text-4xl font-bold my-3">
-          Accross The World Of Photography
-        </h1>
-        <p className="text-white my-6">
-          Anatta is not a denial of existence but rather a strategy to
-          understand how things arise and cease, including our sense of self. By
-          recognizing the impermanence of all things, including our own sense of
-          self, we can detach from the illusion of a fixed, independent entity.
-        </p>
+        <div className="lg:flex lg:flex-row-reverse gap-6">
+          <div className="flex-1/2 flex flex-col lg:justify-center">
+            <h4 className="text-white flex items-center gap-2">
+              <div className="h-1 w-5 bg-primary rounded my-3"></div>
+              NEWS
+            </h4>
+            <h1 className="text-white text-4xl font-bold my-3">
+              Accross The World Of Photography
+            </h1>
+            <p className="text-white my-6">
+              Anatta is not a denial of existence but rather a strategy to
+              understand how things arise and cease, including our sense of
+              self. By recognizing the impermanence of all things, including our
+              own sense of self, we can detach from the illusion of a fixed,
+              independent entity.
+            </p>
 
-        <button className="border-1 border-primary rounded text-white text-xl p-2 px-3">
-          VIEW NEWS
-        </button>
+            <button className="border-1 border-primary rounded text-white text-xl p-2 px-3 mb-9 w-max">
+              VIEW NEWS
+            </button>
+          </div>
+
+          <figure className="flex flex-wrap gap-6 lg:flex-1/2 lg:flex-nowrap">
+            <NewsCard
+              date={"Dec 24, 2027"}
+              imgSrc={"/news-1.jpg"}
+              title={"Model Photoshoot"}
+            />
+            <NewsCard
+              date={"Jan  24, 2028"}
+              imgSrc={"/news-2.jpg"}
+              title={"Company Profile"}
+            />
+          </figure>
+        </div>
+      </section>
+
+      {/* lets talk */}
+      <section className="bg-bglight p-6 py-8 lg:p-12">
+        <div className="lg:flex lg:gap-9">
+          <div className="mb-6 lg:flex-2/3 flex flex-col lg:justify-center">
+            <h4 className="text-white flex items-center gap-2">
+              <div className="h-1 w-5 bg-primary rounded my-3"></div>
+              LET'S TALK
+            </h4>
+            <h1 className="text-white text-4xl font-bold my-3">
+              Keep In Touch
+            </h1>
+            <p className="text-white my-6">
+              This truth acknowledges that life, in its various stages, is
+              marked by suffering, dissatisfaction, and impermanence. It's not
+              just physical pain, but also the unease and frustration that arise
+              from the transient nature of existence.
+            </p>
+            <button className="border-1 border-primary rounded text-white text-xl w-max p-2 px-3">
+              LET'S CHAT
+            </button>
+          </div>
+          <figure className="lg:flex-1/3">
+            <img src="contact.jpg" />
+          </figure>
+        </div>
+      </section>
+
+      <section className=" p-6 py-8 lg:p-12">
+        <div className="lg:flex lg:gap-6 ">
+          <div className="flex-1/2">
+            <img src="/form.jpg" />
+
+            <div className="flex flex-col gap-2 my-6">
+              <input
+                className="bg-primary rounded placeholder:text-white p-3 text-white"
+                placeholder="Name"
+              ></input>
+              <input
+                type="email"
+                className="bg-primary placeholder:text-white rounded p-3 text-white"
+                placeholder="Email"
+              ></input>
+              <textarea
+                className="bg-primary text-white placeholder:text-white p-3 rounded"
+                placeholder="Message"
+                rows={10}
+              ></textarea>
+              <button className="text-center text-white border-1 rounded border-primary p-2">
+                Submit
+              </button>
+            </div>
+          </div>
+
+          <div className="flex-1/2 self-center">
+            <h4 className="text-white flex items-center gap-2">
+              <div className="h-1 w-5 bg-primary rounded my-3"></div>
+              LET'S TALK
+            </h4>
+            <h1 className="text-white text-4xl font-bold my-3">
+              Keep In Touch
+            </h1>
+            <p className="text-white my-6">
+              This truth acknowledges that life, in its various stages, is
+              marked by suffering, dissatisfaction, and impermanence. It's not
+              just physical pain, but also the unease and frustration that arise
+              from the transient nature of existence.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <KITCard
+                imgSrc={"/contact-icon-1.png"}
+                label={"Phone Number"}
+                text={"9896472470"}
+              />
+              <KITCard
+                imgSrc={"/contact-icon-2.png"}
+                label={"Email Address"}
+                text={"dfg31197@gmail.com"}
+              />
+              <KITCard
+                imgSrc={"/contact-icon-3.png"}
+                label={"Website"}
+                text={"www.cool.com"}
+              />
+              <KITCard
+                imgSrc={"/contact-icon-4.png"}
+                label={"Address"}
+                text={"India"}
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
