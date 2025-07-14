@@ -1,4 +1,6 @@
 import Image from "next/image";
+import React from "react";
+import Navbar from "./Navbar";
 function Chevrons() {
   return (
     <div className="flex">
@@ -59,7 +61,7 @@ function NewsCard({ imgSrc, title, date }) {
 function KITCard({ label, text, imgSrc }) {
   return (
     <div className="flex gap-6">
-      <img  className="w-30" src={imgSrc}></img>
+      <img className="w-30" src={imgSrc}></img>
       <div className="flex flex-col self-center">
         <h1 className="text-primary mb-3">{label}</h1>
         <p className="text-white">{text}</p>
@@ -67,38 +69,13 @@ function KITCard({ label, text, imgSrc }) {
     </div>
   );
 }
+
+
 export default function Home() {
+  
   return (
     <main className="flex flex-col max-w-screen-2xl m-auto">
-      <nav className="flex sticky top-0 bg-[#232323] z-10 justify-between items-center gap-6 p-6 ">
-        <h5 className="text-primary text-xl">JD</h5>
-        <ul className="hidden sm:flex gap-5 text-white">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-        <div className="flex">
-          <div className="bg-primary sm:hidden px-2 rounded flex flex-col gap-1 justify-center">
-            <div className="bg-white h-0.5 w-6 rounded"></div>
-            <div className="bg-white h-0.5 w-3.5 mt-0.5 rounded"></div>
-          </div>
-          <button
-            target="#"
-            className="text-white border-primary border-1 p-1 pt-1.5 px-1.5 rounded ml-2"
-          >
-            BOOK NOW
-          </button>
-        </div>
-      </nav>
+     <Navbar />
 
       {/* Hero */}
       <section className="flex flex-col lg:flex-row lg:gap-12 lg:mt-18 gap-6 p-6 ">
@@ -168,7 +145,10 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section className="flex flex-col lg:flex-row py-8 sm:pt-16 px-6">
+      <section
+        id="about"
+        className="flex flex-col lg:flex-row py-8 sm:pt-16 px-6"
+      >
         <div className="mb-6 lg:flex-2/3 lg: pr-12 self-center lg:mb-0">
           <h4 className="text-white flex items-center gap-2">
             <div className="h-1 w-5 bg-primary rounded my-3"></div>ABOUT ME
@@ -316,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* why choose me */}
-      <section className=" p-6 py-8 lg:p-12">
+      <section id="services" className=" p-6 py-8 lg:p-12">
         <div className="flex flex-col lg:flex-row-reverse lg:gap-9">
           <div className="lg:flex-1/2 self-center">
             <h4 className="text-white flex items-center gap-2">
@@ -476,7 +456,7 @@ export default function Home() {
       </section>
 
       <section className=" p-6 py-8 lg:p-12">
-        <div className="lg:flex lg:gap-6 ">
+        <div id="contact" className="lg:flex lg:gap-6 ">
           <div className="flex-1/2">
             <img src="/form.jpg" />
 
@@ -516,7 +496,7 @@ export default function Home() {
               from the transient nature of existence.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6">
               <KITCard
                 imgSrc={"/contact-icon-1.png"}
                 label={"Phone Number"}
